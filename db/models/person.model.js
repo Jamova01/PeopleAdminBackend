@@ -71,7 +71,7 @@ const PersonSchema = {
 class Person extends Model {
   static assocciate(models) {
     this.hasMany(models.Task, {
-      as: 'task',
+      as: 'tasks',
       foreignKey: 'person_id',
     });
   }
