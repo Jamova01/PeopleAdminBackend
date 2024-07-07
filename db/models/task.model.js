@@ -33,8 +33,7 @@ const TaskSchema = {
     defaultValue: Sequelize.NOW,
   },
 
-  personId: {
-    field: 'person_id',
+  person_id: {
     allowNull: false,
     type: DataTypes.INTEGER,
     references: {
@@ -50,6 +49,7 @@ class Task extends Model {
   static assocciate(models) {
     this.belongsTo(models.Person, {
       as: 'person',
+      foreignKey: 'person_id',
     });
   }
 
