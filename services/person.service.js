@@ -6,35 +6,55 @@ class PersonService {
   constructor() {}
 
   async create(data) {
-    const newPerson = await models.Person.create(data);
-    return newPerson;
+    try {
+      const newPerson = await models.Person.create(data);
+      return newPerson;
+    } catch (error) {
+      throw boom.badImplementation('Error creating person', error);
+    }
   }
 
   async find() {
-    const people = await models.Person.findAll();
-    return people;
+    try {
+      const people = await models.Person.findAll();
+      return people;
+    } catch (error) {
+      throw boom.badImplementation('Error finding people', error);
+    }
   }
 
   async findOne(id) {
-    const person = await models.Person.findByPk(id, {
-      include: ['tasks'],
-    });
-    if (!person) {
-      throw boom.notFound('Person not found');
+    try {
+      const person = await models.Person.findByPk(id, {
+        include: ['tasks'],
+      });
+      if (!person) {
+        throw boom.notFound('Person not found');
+      }
+      return person;
+    } catch (error) {
+      throw boom.badImplementation('Error finding person', error);
     }
-    return person;
   }
 
   async update(id, changes) {
-    const person = await this.findOne(id);
-    const response = await person.update(changes);
-    return response;
+    try {
+      const person = await this.findOne(id);
+      const response = await person.update(changes);
+      return response;
+    } catch (error) {
+      throw boom.badImplementation('Error updating person', error);
+    }
   }
 
   async delete(id) {
-    const person = await this.findOne(id);
-    await person.destroy();
-    return { id };
+    try {
+      const person = await this.findOne(id);
+      await person.destroy();
+      return { id };
+    } catch (error) {
+      throw boom.badImplementation('Error deleting person', error);
+    }
   }
 }
 
