@@ -26,13 +26,15 @@ const TaskSchema = {
     type: DataTypes.DATE,
   },
 
-  created_at: {
+  createdAt: {
+    field: 'created_at',
     allowNull: false,
     type: DataTypes.DATE,
     defaultValue: Sequelize.NOW,
   },
 
-  person_id: {
+  personId: {
+    field: 'person_id',
     allowNull: false,
     type: DataTypes.INTEGER,
     references: {
