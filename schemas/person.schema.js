@@ -26,7 +26,6 @@ const createPersonSchema = Joi.object({
 });
 
 const updatePersonSchema = Joi.object({
-  id,
   first_name,
   second_name,
   first_lastname,
@@ -35,8 +34,6 @@ const updatePersonSchema = Joi.object({
   gender,
   birth_country,
   marital_status,
-  document_type,
-  document_number,
 }).min(1);
 
 const getPersonSchema = Joi.object({
