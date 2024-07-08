@@ -63,3 +63,33 @@ npm install
 # o
 yarn install
 ```
+
+## Usage
+
+To start the application in development mode, use the following command:
+
+
+```
+npm run dev
+# o
+yarn dev
+```
+
+This will start the application on port 3000 by default. Open your browser and go to http://localhost:3000/ to interact with the backend APIs.
+
+
+## Technologies Used
+
+This project uses the following technologies:
+
+- **Node.js**: JavaScript runtime environment.
+- **Express**: Web framework for Node.js.
+- **Sequelize**: ORM (Object-Relational Mapping) for PostgreSQL.
+- **Joi**: Schema validation for JavaScript objects.
+- **pg**: PostgreSQL client for Node.js.
+- **pg-hstore**: Module for serializing and deserializing JSON data to hstore format.
+- **dotenv**: Module to load environment variables from a .env file into process.env.
+- **cors**: Middleware for enabling CORS (Cross-Origin Resource Sharing).
+- **@hapi/boom**: HTTP-friendly error handling.
+- **Docker**: Containerization platform for running applications and services.
+- **pgAdmin**: PostgreSQL administration and development platform.
